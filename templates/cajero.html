@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENÚ</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/cajero.css">
+</head>
+<body>
+    <h1>MENÚ</h1>
+    <h2 id="numero">PEDIDO N°2</h2>
+    <section class="lista">
+        <form action="#" method="POST" class="form" id="form">
+            <div id="lista" class="lista-productos">
+                <div class="fila">
+                    <input type="number" min="0" value="0">
+                    <label for="hamburguesa">HAMBURGUESA $500</label>
+                </div>
+                <div class="fila">
+                    <input type="number" min="0" value="1">
+                    <label for="hamburguesa_completa">HAMBURGUESA_COMPLETA $700</label>
+                </div>
+                <div class="fila">
+                    <input type="number" min="0" value="0">
+                    <label for="choripan">CHORIPAN $500</label>
+                </div>
+                <div class="fila">
+                    <input type="number" min="0" value="0">
+                    <label for="pancho">PANCHO $300</label>
+                </div>
+                <div class="fila">
+                    <textarea name="observacion" rows="4" cols="50" placeholder="Observación (100 caracteres máximo)"></textarea>
+                </div>
+                <div class="fila final">
+                    <input type="button" onclick="validar_pedido()" value="Confirmar pedido">
+                    <div class="total">Total: <span id="total">700</span></div>
+                </div>
+            </div>
+        </form>
+    </section>
+    <div class="volver">
+        <button onclick="window.location.href='menu.html'">Volver</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="./static/js/main.js"></script>
+</body>
+</html>

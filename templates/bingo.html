@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario Bingo</title>
+    <link rel="stylesheet" href="/static/css/bingo.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bingo</h1>
+        </div>
+        <div class="tirada-panel">
+            <textarea id="tiradaArea" readonly>Tirada N°: 1</textarea>
+            <button id="actualizarTirada">Actualizar</button>
+        </div>
+        <div class="ingreso-panel">
+            <label for="ingresoField">Ingrese la cantidad de cartones de bingo vendidos (en 1 entrega): </label>
+            <input type="text" id="ingresoField" maxlength="15">
+            <button id="ingresarBoton">Ingresar</button>
+        </div>
+    </div>
+    <script src="/static/js/bingo.js"></script>
+</body>
+</html>

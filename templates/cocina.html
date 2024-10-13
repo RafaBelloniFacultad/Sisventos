@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <!-- Enlazar el archivo CSS aquí -->
+    <link rel="stylesheet" href="/static/css/cocina.css">
+    <!-- Enlazar cualquier otra biblioteca JS aquí -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Pedidos</h1>
+    <div class="contenedor">
+        <div class="pedidos">
+            <h2>Lista de pedidos</h2>
+            <ul id="ul">
+                <li id="pedido-1a" onclick="mostrar_pedido(1, 'a')" class="pedido">Pedido 1 Caja a</li>
+                <!-- Aquí puedes seguir añadiendo más pedidos dinámicamente -->
+            </ul>
+        </div>
+        <div class="detalles-pedido">
+            <h2>Detalles del pedido</h2>
+            <div id="detalles">
+                <!-- Aquí se mostrarán los detalles del pedido seleccionado -->
+            </div>
+        </div>
+    </div>
+    <button class="volver">Volver</button>
+</body>
+</html>

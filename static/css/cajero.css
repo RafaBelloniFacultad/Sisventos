@@ -1,0 +1,93 @@
+body {
+    background-color: #162447; /* Color de fondo azul oscuro */
+    font-family: Arial, sans-serif;
+    color: #FFFFFF; /* Color de texto blanco */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.lista {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.lista-productos {
+    background-color: #4A90E2; /* Color de fondo azul más claro */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.fila input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.fila textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.fila.final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #4A90E2; /* Color de fondo azul más claro */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.fila.final input[type="button"] {
+    background-color: #162447; /* Botón azul oscuro */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.fila.final .total {
+    font-size: 20px;
+}
+
+.volver {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.volver button {
+    background-color: #162447; /* Botón azul oscuro */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario - Sisventos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="\static\archivos\batallonLogo.png" alt="Batallón Pablo C. Barton" class="logo">
+        <h1>Registro de Usuario</h1>
+        <form id="registerForm">
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre de usuario" required>
+            <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+            <input type="password" id="confirmarContraseña" name="confirmarContraseña" placeholder="Confirmar contraseña" required>
+            <select id="rol" name="rol" required>
+                <option value="">Seleccione un rol</option>
+                <option value="admin">Administrador</option>
+                <option value="user">Usuario</option>
+            </select>
+            <button type="submit">Registrar</button>
+        </form>
+        <p><a href="{{ url_for('administrador') }}">¿Ya tienes cuenta? Inicia sesión</a></p>
+        <button id="backButton">Volver al Menú</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</body>
+</html>
