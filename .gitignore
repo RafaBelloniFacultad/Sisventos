@@ -6,7 +6,7 @@ pycache/
 C extensions
 *.so
 
-BataData.db
+
 
 .Python
 build/
@@ -29,3 +29,6 @@ share/python-wheels/
 MANIFEST
 
 PyInstaller
+
+BataData.db
+venv/

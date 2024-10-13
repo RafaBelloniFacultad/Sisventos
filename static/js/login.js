@@ -1,24 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.querySelector('.login-form');
-    const passwordField = document.getElementById('password');
+    const loginForm = document.getElementById('loginForm');
+    const registerLink = document.getElementById('registerLink');
+    const backButton = document.getElementById('backButton');
 
-    loginForm.addEventListener('submit', (event) => {
-        event.preventDefault(); // Evitar el comportamiento por defecto del formulario
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
-        const password = passwordField.value;
+        try {
+            const response = await fetch('/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ usuario: username, contraseña: password }),
+            });
 
-        // Aquí deberías verificar la contraseña
-        if (password === 'correct_password') { // Reemplaza 'correct_password' con la contraseña correcta
-            window.location.href = '/admin';
-        } else {
-            alert('Contraseña incorrecta');
-            passwordField.value = ''; // Limpiar el campo de contraseña
-            passwordField.classList.add('error'); // Agregar clase de error
+            const data = await response.json();
+
+            if (data.success) {
+                alert('Inicio de sesión exitoso');
+                // Redirect to admin page
+                window.location.href = data.redirect;  // Redirige a la página especificada en la respuesta JSON
+            } else {
+                alert(data.message || 'Usuario o contraseña incorrectos');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Ocurrió un error al iniciar sesión');
         }
     });
 
-    passwordField.addEventListener('input', () => {
-        passwordField.classList.remove('error'); // Remover clase de error al cambiar el texto
+    registerLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = '/register';
+    });
+
+    backButton.addEventListener('click', () => {
+        window.location.href = '/';
     });
 });
-
