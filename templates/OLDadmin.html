@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Batallón Pablo C. Barton</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>ADMINISTRADOR</h1>
+        <form id="adminForm">
+            <!--------------------------------------------------------------------------------------------------------------------------------- -->
+            <div class="container">
+                <header>
+                    <img src="static/archivos/batallonLogo.png" alt="Logo" class="logo">
+                    <div class="user-info">
+                        <span id="userLabel">Usuario: <span id="username"></span></span>
+                        <button id="logoutButton">Cerrar Sesión</button>
+                    </div>
+                </header>
+                <h1>Gestión de Eventos</h1>
+                <div class="event-info">
+                    <div class="input-group">
+                        <label for="eventName">Ingrese el nombre del evento</label>
+                        <select id="eventName" required>
+                            <option value="">Seleccione un evento</option>
+                            <option value="Tombola">Tombola</option>
+                            <option value="Kermesse">Kermesse</option>
+                            <option value="Feria de comida">Feria de comida</option>
+                            <option value="Parrilla en torneo de padres">Parrilla en torneo de padres</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="eventDate">Ingrese la fecha del evento</label>
+                        <input type="text" id="eventDate" placeholder="dd/mm/aaaa" required>
+                    </div>
+                </div>
+                <div id="eventDetails" style="display: none;">
+                    <div class="section">
+                        <button class="select-button" data-target="comidas">Ingresar Comidas</button>
+                        <div id="comidas" class="details">
+                            <input type="text" placeholder="Ingrese el nombre de la comida" required>
+                            <input type="number" placeholder="Ingrese la cantidad total comprada de la comida" required>
+                            <input type="number" placeholder="Ingrese el gasto total de compra de la comida" required>
+                            <input type="number" placeholder="Ingrese el precio unitario de venta de la comida" required>
+                            <input type="text" placeholder="Ingrese un comentario/detalle adicional">
+                            <button class="accept-button">Aceptar</button>
+                        </div>
+                    </div>
+                    <!-- <div class="section" id="bingoSection">
+                        <button class="select-button" data-target="bingo">Ingresar Datos del Bingo</button>
+                        <div id="bingo" class="details">
+                            <input type="text" placeholder="Ingrese el nombre del entretenimiento" required>
+                            <input type="number" placeholder="Ingrese la cantidad de cartones comprada en total" required>
+                            <input type="number" placeholder="Ingrese el gasto total de compra de los cartones" required>
+                            <input type="number" placeholder="Ingrese el precio unitario de venta durante el evento" required>
+                            <div class="sub-section">
+                                <h3>Ingresar premios</h3>
+                                <input type="text" placeholder="Ingrese el nombre del premio" required>
+                                <input type="number" placeholder="Ingrese la cantidad total comprada de este premio" required>
+                                <input type="number" placeholder="Ingrese el precio unitario de compra" required>
+                                <input type="text" placeholder="Ingrese un comentario/detalle adicional">
+                            </div>
+                            <button class="accept-button">Aceptar</button>
+                        </div>
+                    </div>
+                    <div class="section" id="kermesseSection">
+                        <button class="select-button" data-target="kermesse">Ingresar Datos de los Juegos de Kermesse</button>
+                        <div id="kermesse" class="details">
+                            <input type="text" placeholder="Ingrese el nombre del entretenimiento" required>
+                            <input type="number" placeholder="Ingrese el precio unitario de venta durante el evento" required>
+                            <div class="sub-section">
+                                <h3>Ingresar premios</h3>
+                                <input type="text" placeholder="Ingrese el nombre del premio" required>
+                                <input type="number" placeholder="Ingrese la cantidad total comprada de este premio" required>
+                                <input type="number" placeholder="Ingrese el precio unitario de compra" required>
+                                <input type="text" placeholder="Ingrese un comentario/detalle adicional">
+                            </div>
+                            <button class="accept-button">Aceptar</button>
+                        </div>
+                    </div>
+                    <div class="section" id="entradasSection">
+                        <button class="select-button" data-target="entradas">Ingresar Entradas</button>
+                        <div id="entradas" class="details">
+                            <input type="number" placeholder="Ingrese cuantas anticipadas habran" required>
+                            <input type="number" placeholder="Ingrese el precio unitario de venta de las anticipadas" required>
+                            <input type="number" placeholder="Ingrese cuantas entradas en puerta habran" required>
+                            <input type="number" placeholder="Ingrese el precio unitario de venta de las entradas en puerta" required>
+                            <button class="accept-button">Aceptar</button>
+                        </div>
+                    </div>
+                </div> -->
+                <button id="submitEvent" style="display: none;">Ingresar Datos del Evento</button>
+                <div id="eventRecords"></div>
+            </div>
+
+            <!--<button type="button" id="logoutButton">Cerrar Sesion</button>-->
+              <!--------------------------------------------------------------------------------------------------------------------------------- -->
+        </form>
+    </div>
+    <script src="static/js/admin.js"></script>
+
+</body>
+</html>

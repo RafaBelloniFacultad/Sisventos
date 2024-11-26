@@ -1,57 +1,94 @@
-body {
-    background-color: #244374;
-    color: white;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
 .container {
-    text-align: center;
+    max-width: 800px;
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
 }
 
-h1 {
-    margin-bottom: 20px;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
-form {
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+#userLabel {
+    margin-right: 1rem;
+}
+
+.event-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.input-group {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    width: 48%;
 }
 
-label {
-    margin-top: 10px;
-    font-size: 14px;
+.select-button {
+    text-align: left;
+    background-color: #1e40af;
+    margin-bottom: 0.5rem;
 }
 
-input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
+.details {
+    background-color: #0284c7;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.details input, .details select {
     width: 100%;
-    max-width: 300px;
+    margin-bottom: 0.5rem;
 }
 
-button {
-    background-color: #4b0082;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+.sub-section {
+    margin-top: 1rem;
+}
+
+.accept-button {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+#submitEvent {
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #22c55e;
+}
+
+#submitEvent:hover {
+    background-color: #16a34a;
+}
+
+.event-record {
+    background-color: #0284c7;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
     cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
 }
 
-button:active {
-    background-color: #2e0059;
+.event-details {
+    display: none;
+    margin-top: 1rem;
+    padding-left: 1rem;
+}
+
+.arrow {
+    display: inline-block;
+    margin-right: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.arrow.open {
+    transform: rotate(90deg);
 }

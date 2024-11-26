@@ -4,10 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     registerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
         const nombre = document.getElementById('nombre').value;
         const contraseña = document.getElementById('contraseña').value;
         const confirmarContraseña = document.getElementById('confirmarContraseña').value;
         const rol = document.getElementById('rol').value;
+        const claveMaestra = document.getElementById('claveMaestra').value;
 
         try {
             const response = await fetch('/register', {
@@ -15,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ nombre, contraseña, confirmarContraseña, rol }),
+                body: JSON.stringify({ nombre, contraseña, confirmarContraseña, rol, claveMaestra }),
             });
 
             const data = await response.json();

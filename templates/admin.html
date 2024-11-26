@@ -3,17 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador - Batallón Pablo C. Barton</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Admin Panel - Gestión de Eventos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cocina.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>ADMINISTRADOR</h1>
-        <form id="adminForm">
+        <header>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+            <!-- <img src="\static\archivos\batallonLogo.png" alt="Batallón Pablo C. Barton" class="logo"> -->
+            <div class="user-info">
+                <span>Usuario: <span id="username">{{ username }}</span></span>
+                <span>Id Evento: <span id="eventId">{{ event_id }}</span></span>
+                <button id="logoutButton">Cerrar Sesión</button>
+            </div>
+        </header>
 
-            <button type="button" id="logoutButton">Cerrar Sesion</button>
-        </form>
+        <main>
+            <form id="eventForm">
+                <div class="event-selection">
+                    <select id="eventType" required>
+                        <option value="">Seleccione el tipo de evento</option>
+                        <option value="Tombola">Tombola</option>
+                        <option value="Kermesse">Kermesse</option>
+                        <option value="Feria de Comida">Feria de Comida</option>
+                        <option value="Porfia en torneo de padres">Porfia en torneo de padres</option>
+                    </select>
+
+                    <input type="date" id="eventDate" required>
+                </div>
+
+                <div id="foodInputs" style="display: none;">
+                    <input type="text" id="foodName" placeholder="Ingrese el nombre de la comida" required>
+                    <input type="number" id="foodQuantity" placeholder="Ingrese la cantidad total comprada" required>
+                    <input type="number" id="totalCost" placeholder="Ingrese el gasto total de la compra" required>
+                    <input type="number" id="unitPrice" placeholder="Ingrese el precio unitario de venta" required>
+                    <textarea id="additionalComments" placeholder="Comentario adicional"></textarea>
+                    <button type="button" id="addFoodButton">Ingresar comida</button>
+                </div>
+            </form>
+
+            <div id="foodList">
+                <!-- Las comidas se agregarán aquí dinámicamente -->
+            </div>
+
+            <button id="submitBuffet" class="submit-button" style="display: none;">Cargar Buffet</button>
+        </main>
     </div>
     <script src="static/js/admin.js"></script>
+
 </body>
 </html>

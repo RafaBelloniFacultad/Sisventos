@@ -1,41 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let selectedUser = '';
-
     const userButtons = document.querySelectorAll('.user-button');
-    const loginButton = document.getElementById('ingresar');
+    const backButton = document.getElementById('volver');
 
     userButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            event.stopPropagation(); // Evita que el evento se propague al documento
-            userButtons.forEach(btn => btn.style.backgroundColor = '#336699'); // Reset background color
-            button.style.backgroundColor = '#224466'; // Highlight selected button
-            selectedUser = button.id;
-        });
-    });
-
-    loginButton.addEventListener('click', () => {
-        if (selectedUser) {
-            // En lugar de window.location.href, realizamos una redirección en Flask
-            fetch(`/login/${selectedUser}`)
+        button.addEventListener('click', () => {
+            fetch(`/login/${button.id}`)
                 .then(response => {
                     if (response.ok) {
-                        window.location.href = response.url; // Redirige a la URL devuelta por el servidor
+                        window.location.href = response.url;
                     } else {
                         alert('Error en la redirección. Intenta nuevamente.');
                     }
                 })
                 .catch(error => {
-                    console.error('Hubo un error en la redirección:', error);
+                    console.error('Error:', error);
+                    alert('Error en la redirección');
                 });
-        } else {
-            alert('Por favor, seleccione un tipo de usuario antes de ingresar.');
-        }
+        });
     });
 
-    document.addEventListener('click', (event) => {
-        if (!event.target.classList.contains('user-button')) {
-            userButtons.forEach(btn => btn.style.backgroundColor = '#336699'); // Reset background color
-            selectedUser = '';
+    //backButton.addEventListener('click', () => {
+    //    fetch('/preMenu')
+    //        .then(response => {
+    //            if (response.ok) {
+    //                window.location.href = '/preMenu';
+    //            } else {
+    //                alert('Error en la redirección. Intenta nuevamente.');
+    //            }
+    //        })
+    //        .catch(error => {
+    //            console.error('Error:', error);
+    //            alert('Error en la redirección');
+    //        });
+    //});
+
+    backButton.addEventListener('click', async () => {
+        try {
+            const response = await fetch('/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            
+            if (response.ok) {
+                window.location.href = '/preMenu';
+            } else {
+                alert('Error al cerrar sesión');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error en la redirección');
         }
     });
 });
